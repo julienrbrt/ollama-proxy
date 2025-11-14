@@ -1,5 +1,7 @@
 # Ollama Proxy
 
+[![Test](https://github.com/julienrbrt/ollama-proxy/actions/workflows/test.yml/badge.svg)](https://github.com/julienrbrt/ollama-proxy/actions/workflows/test.yml)
+
 A lightweight Go reverse proxy for Ollama with Bearer token authentication.
 
 ## Features

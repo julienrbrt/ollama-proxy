@@ -8,6 +8,10 @@
 # Test binary, built with `go test -c`
 *.test
 
+# Coverage files
+coverage.out
+coverage.html
+
 # Output of the go build
 ollama-proxy
 
