@@ -9,7 +9,7 @@ test: ## Run tests
 lint: ## Run linter
 	golangci-lint run
 
-run: ## Run the application (requires AUTH_TOKEN env var)
+run: ## Run the application (requires OP_AUTH_TOKEN env var)
 	go run .
 
 clean: ## Remove build artifacts

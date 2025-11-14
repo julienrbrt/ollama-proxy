@@ -28,7 +28,7 @@ func main() {
 
 	token := os.Getenv(authEnv)
 	if token == "" {
-		log.Fatal("AUTH_TOKEN environment variable is required")
+		log.Fatalf("%s environment variable is required", authEnv)
 	}
 
 	proxy, err := newProxy(ollamaURL)
