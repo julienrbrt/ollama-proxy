@@ -13,7 +13,7 @@ A lightweight Go reverse proxy for Ollama with Bearer token authentication.
 ## Installation
 
 ```bash
-go install github.com/ollama/ollama-proxy@latest
+go install github.com/julienrbrt/ollama-proxy@latest
 ```
 
 ```bash
@@ -36,5 +36,5 @@ The proxy is configured via environment variables:
 export AUTH_TOKEN="your-secret-token"
 export OLLAMA_URL="http://localhost:11434"
 export PORT="8080"
-./ollama-proxy
+ollama-proxy
 ```
