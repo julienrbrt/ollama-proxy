@@ -10,15 +10,15 @@ import (
 )
 
 const (
-	portEnv   = "PORT"
-	authEnv   = "AUTH_TOKEN"
-	ollamaEnv = "OLLAMA_URL"
+	portEnv   = "OP_PORT"
+	authEnv   = "OP_AUTH_TOKEN"
+	ollamaEnv = "OP_OLLAMA_URL"
 )
 
 func main() {
 	port := os.Getenv(portEnv)
 	if port == "" {
-		port = "8080"
+		port = "11433"
 	}
 
 	ollamaURL := os.Getenv(ollamaEnv)
