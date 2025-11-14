@@ -1,0 +1,24 @@
+[Unit]
+Description=Ollama Proxy - Bearer token authentication proxy for Ollama API
+Documentation=https://github.com/julienrbrt/ollama-proxy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5s
+
+# Environment variables
+Environment="OP_AUTH_TOKEN=your-secret-token-here"
+Environment="OP_OLLAMA_URL=http://localhost:11434"
+Environment="OP_PORT=11433"
+
+# Alternatively, use an environment file:
+# EnvironmentFile=/etc/ollama-proxy/config.env
+
+# Path to the binary
+ExecStart=/usr/local/bin/ollama-proxy
+
+[Install]
+WantedBy=multi-user.target
