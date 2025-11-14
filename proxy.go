@@ -50,5 +50,22 @@ func newProxy(targetURL string) (*httputil.ReverseProxy, error) {
 	}
 
 	proxy := httputil.NewSingleHostReverseProxy(target)
+
+	// Customize the request before sending to backend
+	originalDirector := proxy.Director
+	proxy.Director = func(req *http.Request) {
+		originalDirector(req)
+
+		// Remove proxy headers to make it look like a local request
+		req.Header.Del("X-Forwarded-For")
+		req.Header.Del("X-Forwarded-Host")
+		req.Header.Del("X-Forwarded-Proto")
+		req.Header.Del("Via")
+		req.Header.Del("Authorization")
+
+		// Set Host to the target host to make it appear local
+		req.Host = target.Host
+	}
+
 	return proxy, nil
 }
